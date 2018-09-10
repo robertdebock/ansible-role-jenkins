@@ -22,6 +22,7 @@
   rpm_key:
     key: "{{ jenkins_rpm_key }}"
     state: present
+    validate_certs: no
   when:
     - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
 
