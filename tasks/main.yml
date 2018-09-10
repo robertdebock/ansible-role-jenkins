@@ -12,10 +12,9 @@
     - default.yml
 
 - name: add yum repository
-  yum_repository:
-    name: jenkins
-    description: Jenkins repository
-    baseurl: "{{ jenkins_yum_repository_baseurl }}"
+  get_url:
+    url: "{{ jenkins_yum_repository_baseurl }}"
+    dest: /etc/yum.repos.d/jenkins.repo
   when:
     - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
 
