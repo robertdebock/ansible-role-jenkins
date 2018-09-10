@@ -1,3 +1,4 @@
 ---
 # vars file for jenkins
-# jenkins_parameter: value
+jenkins_yum_repository_baseurl: "https://pkg.jenkins.io/redhat/jenkins.repo"
+jenkins_rpm_key: "https://jenkins.io/redhat/jenkins.io.key"

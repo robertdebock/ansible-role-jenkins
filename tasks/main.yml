@@ -15,32 +15,46 @@
   yum_repository:
     name: jenkins
     description: Jenkins repository
-    baseurl: "https://pkg.jenkins.io/redhat/jenkins.repo"
+    baseurl: "{{ jenkins_yum_repository_baseurl }}"
   when:
     - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
 
 - name: import rpm key
   rpm_key:
-    key: "https://jenkins-ci.org/redhat/jenkins-ci.org.key"
+    key: "{{ jenkins_rpm_key }}"
     state: present
   when:
     - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
 
 - name: add apt key
   apt_key:
-    url: "https://pkg.jenkins.io/debian/jenkins.io.key"
+    url: "{{ jenkins_apt_key_url }}"
     state: present
   when:
     - ansible_pkg_mgr == "apt"
 
 - name: add apt repository
   apt_repository:
-    repo: "deb http://pkg.jenkins.io/debian-stable binary/"
+    repo: "{{ jenkins_apt_repository_repo }}"
     state: present
   when:
     - ansible_pkg_mgr == "apt"
 
-- name: install jenkins
+- name: add zypper repository
+  zypper_repository:
+    name: jenkins
+    repo: "{{ jenkins_zypper_repository_repo }}"
+    state: present
+  when:
+    - ansible_pkg_mgr == "zypper"
+
+- name: install software
   package:
     name: jenkins
     state: present
+
+- name: start and enable software
+  service:
+    name: jenkins
+    state: started
+    enabled: yes
