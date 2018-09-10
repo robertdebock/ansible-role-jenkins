@@ -26,16 +26,16 @@
   when:
     - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
 
-- name: add apt repository
-  apt_repository:
-    repo: "deb http://pkg.jenkins.io/debian-stable binary/"
+- name: add apt key
+  apt_key:
+    url: "https://pkg.jenkins.io/debian/jenkins.io.key"
     state: present
   when:
     - ansible_pkg_mgr == "apt"
 
-- name: add apt key
-  apt_key:
-    url: "https://pkg.jenkins.io/debian/jenkins.io.key"
+- name: add apt repository
+  apt_repository:
+    repo: "deb http://pkg.jenkins.io/debian-stable binary/"
     state: present
   when:
     - ansible_pkg_mgr == "apt"
