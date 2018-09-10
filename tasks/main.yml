@@ -15,7 +15,7 @@
   yum_repository:
     name: jenkins
     description: Jenkins repository
-    baseurl: "http://pkg.jenkins-ci.org/redhat/jenkins.repo"
+    baseurl: "https://pkg.jenkins.io/redhat/jenkins.repo"
   when:
     - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
 
