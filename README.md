@@ -22,12 +22,13 @@ Requirements
 Role Variables
 --------------
 
-- jenkins_parameter: Description of values. [default: value]
+- jenkins_port: The TCP port to listen on for HTTP. [default: 8080]
+- jenkins_listen_address: The IP address to listen on. [default: 0.0.0.0]
 
 Dependencies
 ------------
 
-- None known.
+- Java. Hint: [ansible-role-java](https://galaxy.ansible.com/robertdebock/java).
 
 Compatibility
 -------------
@@ -62,8 +63,9 @@ Example Playbook
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.java
     - role: robertdebock.jenkins
-      jenkins_parameter: value
+      jenkins_port: 8081
 ```
 
 To install this role:
@@ -73,6 +75,7 @@ Sample roles/requirements.yml: (install with `ansible-galaxy install -r roles/re
 ```
 ---
 - name: robertdebock.bootstrap
+- name: robertdebock.java
 - name: robertdebock.jenkins
 ```
 
