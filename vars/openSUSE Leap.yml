@@ -2,3 +2,4 @@
 # vars file for jenkins
 jenkins_zypper_repository_repo: "https://pkg.jenkins.io/opensuse/"
 jenkins_rpm_key: "https://jenkins.io/redhat/jenkins.io.key"
+jenkins_configuration_directory: /etc/sysconfig

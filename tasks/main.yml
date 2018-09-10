@@ -53,6 +53,13 @@
     name: jenkins
     state: present
 
+- name: configure software
+  template:
+    src: jenkins.j2
+    dest: "{{ jenkins_configuration_directory }}/jenkins"
+  notify:
+    - restart software
+
 - name: start and enable software
   service:
     name: jenkins

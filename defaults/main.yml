@@ -1,3 +1,4 @@
 ---
 # defaults file for jenkins
-# jenkins_parameter: value
+jenkins_port: 8080
+jenkins_listen_address: 0.0.0.0
