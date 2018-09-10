@@ -1,0 +1,46 @@
+---
+# tasks file for jenkins
+- name: load default variables
+  include_vars:
+    file: default.yml
+
+- name: load os-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - default.yml
+
+- name: add yum repository
+  yum_repository:
+    name: jenkins
+    description: Jenkins repository
+    baseurl: "http://pkg.jenkins-ci.org/redhat/jenkins.repo"
+  when:
+    - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
+
+- name: import rpm key
+  rpm_key:
+    key: "https://jenkins-ci.org/redhat/jenkins-ci.org.key"
+    state: present
+  when:
+    - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
+
+- name: add apt repository
+  apt_repository:
+    repo: "deb http://pkg.jenkins.io/debian-stable binary/"
+    state: present
+  when:
+    - ansible_pkg_mgr == "apt"
+
+- name: add apt key
+  apt_key:
+    url: "https://pkg.jenkins.io/debian/jenkins.io.key"
+    state: present
+  when:
+    - ansible_pkg_mgr == "apt"
+
+- name: install jenkins
+  package:
+    name: jenkins
+    state: present
