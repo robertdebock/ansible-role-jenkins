@@ -46,7 +46,7 @@
   template:
     src: jenkins.j2
     dest: "{{ jenkins_configuration_directory[ansible_distribution]
-          | default([jenkins_configuration_directory['default']) }}/jenkins"
+          | default(jenkins_configuration_directory['default']) }}/jenkins"
   notify:
     - restart jenkins
 
