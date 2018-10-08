@@ -1,3 +1,0 @@
----
-# vars file for jenkins
-jenkins_configuration_directory: /etc/default

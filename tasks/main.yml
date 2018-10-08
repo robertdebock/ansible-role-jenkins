@@ -1,16 +1,5 @@
 ---
 # tasks file for jenkins
-- name: load default variables
-  include_vars:
-    file: default.yml
-
-- name: load os-specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-    - "{{ ansible_distribution }}.yml"
-    - default.yml
-
 - name: add yum repository
   get_url:
     url: "{{ jenkins_yum_repository_baseurl }}"
@@ -48,19 +37,20 @@
   when:
     - ansible_pkg_mgr == "zypper"
 
-- name: install software
+- name: install jenkins
   package:
     name: jenkins
-    state: present
+    state: "{{ jenkins_package_state }}"
 
-- name: configure software
+- name: configure jenkins
   template:
     src: jenkins.j2
-    dest: "{{ jenkins_configuration_directory }}/jenkins"
+    dest: "{{ jenkins_configuration_directory[ansible_distribution]
+          | default([jenkins_configuration_directory['default']) }}/jenkins"
   notify:
-    - restart software
+    - restart jenkins
 
-- name: start and enable software
+- name: start and enable jenkins
   service:
     name: jenkins
     state: started
