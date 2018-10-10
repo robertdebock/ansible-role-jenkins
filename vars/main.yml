@@ -2,6 +2,7 @@
 # vars file for jenkins
 jenkins_configuration_directory:
   default: /etc/default
+  Alpine: /etc/conf.d
   CentOS: /etc/sysconfig
   Fedora: /etc/sysconfig
   openSUSE Leap: /etc/sysconfig
