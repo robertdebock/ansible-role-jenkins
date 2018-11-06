@@ -3,8 +3,7 @@ jenkins
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-jenkins.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-jenkins)
 
-Provides jenkins for your system.
-
+The purpose of this role is to install and configure jenkins on your system.
 
 Example Playbook
 ----------------
