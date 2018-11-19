@@ -38,6 +38,8 @@ platforms:
     image: ubuntu:artful
   - name: jenkins-ubuntu-devel
     image: ubuntu:devel
+  - name: jenkins-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
