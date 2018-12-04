@@ -21,6 +21,9 @@
     state: present
   when:
     - ansible_pkg_mgr == "apt"
+  register: jenkins_add_apt_key
+  until: jenkins_add_apt_key is succeeded
+  retries: 3
 
 - name: add apt repository
   apt_repository:
@@ -41,6 +44,9 @@
   package:
     name: jenkins
     state: "{{ jenkins_package_state }}"
+  register: jenkins_install_jenkins
+  until: jenkins_install_jenkins is succeeded
+  retries: 3
 
 - name: configure jenkins
   template:
