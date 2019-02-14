@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: jenkins-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: jenkins-ubuntu-artful
-    image: ubuntu:artful
+  - name: jenkins-ubuntu-latest
+    image: ubuntu:latest
+  - name: jenkins-ubuntu-rolling
+    image: ubuntu:rolling
   - name: jenkins-ubuntu-devel
     image: ubuntu:devel
   - name: jenkins-ubuntu-latest
