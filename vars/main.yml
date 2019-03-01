@@ -6,7 +6,6 @@ _jenkins_configuration_directory:
   CentOS: /etc/sysconfig
   Fedora: /etc/sysconfig
   openSUSE Leap: /etc/sysconfig
-  openSUSE tumbleweed: /etc/sysconfig
 
 jenkins_configuration_directory: "{{ _jenkins_configuration_directory[ansible_distribution] | default(_jenkins_configuration_directory['default']) }}"
 
