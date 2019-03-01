@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: jenkins-opensuse-leap
     image: opensuse:leap
-  - name: jenkins-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: jenkins-ubuntu-latest
     image: ubuntu:latest
   - name: jenkins-ubuntu-rolling
