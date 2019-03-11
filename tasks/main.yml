@@ -46,7 +46,7 @@
 - name: install jenkins
   package:
     name: jenkins
-    state: "{{ jenkins_package_state }}"
+    state: present
   register: jenkins_install_jenkins
   until: jenkins_install_jenkins is succeeded
   retries: 3

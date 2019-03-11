@@ -37,9 +37,6 @@ jenkins_port: 8080
 
 # What address Jenkins should bind to.
 jenkins_listen_address: 0.0.0.0
-
-# To update all packages installed by this roles, set `jenkins_package_state` to `latest`.
-jenkins_package_state: present
 ```
 
 Requirements
