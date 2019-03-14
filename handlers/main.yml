@@ -5,4 +5,4 @@
     name: jenkins
     state: restarted
   when:
-    - ansible_virtualization_type != "docker" or jenkins_ignore_docker
+    - ansible_virtualization_type != "docker"
