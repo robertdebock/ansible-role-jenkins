@@ -14,7 +14,7 @@ platforms:
 provisioner:
   name: ansible
   playbooks:
-    prepare: ../resources/prepare.yml
+    prepare: ../resources/prepare-java11.yml
     converge: ../resources/playbook.yml
   lint:
     name: ansible-lint
