@@ -25,9 +25,6 @@ platforms:
   - name: jenkins-centos-latest
     image: centos:latest
     pre_build_image: yes
-  - name: jenkins-debian-latest
-    image: debian:latest
-    pre_build_image: yes
   - name: jenkins-debian-stable
     image: debian:stable
     pre_build_image: yes
