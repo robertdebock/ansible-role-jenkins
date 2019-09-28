@@ -3,11 +3,10 @@
 _jenkins_configuration_directory:
   default: /etc/default
   Alpine: /etc/conf.d
-  CentOS: /etc/sysconfig
-  Fedora: /etc/sysconfig
-  openSUSE Leap: /etc/sysconfig
+  RedHat: /etc/sysconfig
+  Suse: /etc/sysconfig
 
-jenkins_configuration_directory: "{{ _jenkins_configuration_directory[ansible_distribution] | default(_jenkins_configuration_directory['default']) }}"
+jenkins_configuration_directory: "{{ _jenkins_configuration_directory[ansible_os_family] | default(_jenkins_configuration_directory['default']) }}"
 
 jenkins_yum_repository_baseurl: "https://pkg.jenkins.io/redhat/jenkins.repo"
 
