@@ -17,11 +17,6 @@ env:
     - image="debian" tag="stable"
     - image="debian" tag="unstable"
     - image="debian"
-    - image="centos" tag="7"
-    - image="centos"
-    - image="fedora"
-    - image="fedora" tag="rawhide"
-    - image="opensuse"
     - image="ubuntu" tag="rolling"
     - image="ubuntu" tag="devel"
     - image="ubuntu"
@@ -30,7 +25,6 @@ matrix:
   allow_failures:
     - env: image="alpine" tag="edge"
     - env: image="debian" tag="unstable"
-    - env: image="fedora" tag="rawhide"
     - env: image="ubuntu" tag="rolling"
     - env: image="ubuntu" tag="devel"
 
