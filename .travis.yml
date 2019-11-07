@@ -16,11 +16,8 @@ env:
     - image="alpine"
     - image="alpine" tag="edge"
     # - namespace="archlinux" image="base"
-    - image="debian" tag="stable"
     - image="debian" tag="unstable"
     - image="debian"
-    - image="ubuntu" tag="rolling"
-    - image="ubuntu" tag="devel"
     - image="ubuntu"
 
 matrix:
