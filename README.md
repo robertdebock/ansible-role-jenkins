@@ -82,8 +82,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|amazonlinux|1|no|
-|amazonlinux|latest|no|
 |alpine|latest|no|
 |alpine|edge|yes|
 |debian|unstable|yes|
@@ -92,11 +90,9 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 This role has been tested on these Ansible versions:
 
-- ansible~=2.8
-- ansible~=2.9
+- ansible>=2.8, <2.9
+- ansible>=2.9
 - git+https://github.com/ansible/ansible.git@devel
-
-The indicator '\~=' means [compatible with](https://www.python.org/dev/peps/pep-0440/#compatible-release). For example 'ansible\~=2.8' would pick the latest ansible-2.8, for example ansible-2.8.6.
 
 Exceptions
 ----------
@@ -105,9 +101,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| Fedora | Unable to enable service jenkins: Failed to enable unit: Unit file jenkins.service does not exist. |
-| EL | /etc/rc.d/init.d/jenkins: line 59: /etc/init.d/functions: No such file or directory |
-| Suse | Unable to enable service jenkins: jenkins.service is not a native service, redirecting to systemd-sysv-install. |
+| amazonlinux | /etc/rc.d/init.d/jenkins: line 59: /etc/init.d/functions: No such file or directory |
 
 
 
