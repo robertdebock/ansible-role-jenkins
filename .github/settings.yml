@@ -1,4 +1,7 @@
 ---
+#
+# Ansible managed
+#
 repository:
   description: Install and configure jenkins on your system.
   homepage: https://robertdebock.nl/
