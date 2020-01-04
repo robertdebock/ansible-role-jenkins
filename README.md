@@ -4,6 +4,8 @@ jenkins
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-jenkins"> <img src="https://travis-ci.org/robertdebock/ansible-role-jenkins.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/29474"/> <img src="https://img.shields.io/ansible/quality/29474"/>
 
+<a href="https://github.com/robertdebock/ansible-role-jenkins/actions"><img src="https://github.com/robertdebock/ansible-role-jenkins/workflows/GitHub%20Action/badge.svg"/></a>
+
 Install and configure jenkins on your system.
 
 Example Playbook
@@ -84,7 +86,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |container|tags|
 |---------|----|
 |alpine|all|
-|archlinux|all|
 |debian|all|
 |ubuntu|artful, bionic|
 
