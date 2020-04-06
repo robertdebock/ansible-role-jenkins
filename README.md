@@ -29,8 +29,8 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.java
+    - role: robertdebock.bootstrap
+    - role: robertdebock.java
 ```
 
 For verification `molecule/resources/verify.yml` run after the role has been applied.
