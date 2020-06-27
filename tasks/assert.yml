@@ -1,0 +1,14 @@
+---
+- name: test if jenkins_port is set correctly
+  assert:
+    that:
+      - jenkins_port is defined
+      - jenkins_port | int
+      - jenkins_port | int > 0
+      - jenkins_port | int < 65535
+
+- name: test if jenkins_listen_address is set correctly
+  assert:
+    that:
+      - jenkins_listen_address is defined
+      - jenkins_listen_address | length > 0

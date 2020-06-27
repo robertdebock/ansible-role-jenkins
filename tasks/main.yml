@@ -1,5 +1,8 @@
 ---
 # tasks file for jenkins
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: add yum repository
   get_url:
     url: "{{ jenkins_yum_repository_baseurl }}"
