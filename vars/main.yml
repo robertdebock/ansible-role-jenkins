@@ -1,5 +1,6 @@
 ---
 # vars file for jenkins
+
 _jenkins_configuration_directory:
   default: /etc/default
   Alpine: /etc/conf.d
