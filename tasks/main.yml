@@ -2,6 +2,7 @@
 # tasks file for jenkins
 - name: include assert.yml
   include_tasks: assert.yml
+  run_once: yes
 
 - name: add yum repository
   get_url:
