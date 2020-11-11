@@ -3,7 +3,7 @@
   assert:
     that:
       - jenkins_port is defined
-      - jenkins_port | int
+      - jenkins_port is number
       - jenkins_port | int > 0
       - jenkins_port | int < 65535
     quiet: yes
