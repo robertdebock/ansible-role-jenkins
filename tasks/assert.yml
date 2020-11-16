@@ -12,5 +12,4 @@
   assert:
     that:
       - jenkins_listen_address is defined
-      - jenkins_listen_address | length > 0
     quiet: yes
