@@ -31,7 +31,7 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.java
-      # java_version: 8
+    - role: robertdebock.locale
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -61,6 +61,7 @@ jenkins_listen_address: 0.0.0.0
 |-------------|--------|--------|
 | [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-bootstrap.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-bootstrap) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions) |
 | [robertdebock.java](https://galaxy.ansible.com/robertdebock/java) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-java.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-java) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-java/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-java/actions) |
+| [robertdebock.locale](https://galaxy.ansible.com/robertdebock/locale) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-locale.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-locale) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-locale/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-locale/actions) |
 
 ## [Context](#context)
 

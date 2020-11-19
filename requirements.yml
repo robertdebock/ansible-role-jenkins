@@ -2,3 +2,4 @@
 roles:
   - name: robertdebock.bootstrap
   - name: robertdebock.java
+  - name: robertdebock.locale
