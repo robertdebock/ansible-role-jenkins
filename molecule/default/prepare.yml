@@ -8,3 +8,4 @@
     - role: robertdebock.bootstrap
     - role: robertdebock.java
     - role: robertdebock.locale
+    - role: robertdebock.core_dependencies
