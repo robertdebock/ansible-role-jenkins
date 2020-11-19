@@ -31,7 +31,7 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.java
-      java_version: 8
+      # java_version: 8
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -76,8 +76,8 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |container|tags|
 |---------|----|
 |alpine|all|
-|debian|buster, bullseye|
-|ubuntu|focal, bionic|
+|debian|all|
+|ubuntu|all|
 
 The minimum version of Ansible required is 2.9, tests have been done to:
 
