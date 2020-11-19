@@ -31,6 +31,7 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.java
+      java_version: 8
     - role: robertdebock.locale
     - role: robertdebock.core_dependencies
 ```
