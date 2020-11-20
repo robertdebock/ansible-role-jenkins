@@ -82,7 +82,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |el|all|
 |fedora|all|
 |opensuse|all|
-|ubuntu|all|
+|ubuntu|xenial|
 
 The minimum version of Ansible required is 2.9, tests have been done to:
 
@@ -98,6 +98,8 @@ Some variarations of the build matrix do not work. These are the variations and 
 |---------------------------|------------------------|
 | alpine | tried to configure name using a file "/etc/sysconfig/clock", but could not write to it |
 | amazonlinux | /etc/rc.d/init.d/jenkins: line 59: /etc/init.d/functions: No such file or directory |
+| ubuntu:bionic | No openjdk 8, with openjdk 11 jenkins returns an error. |
+| ubuntu:focal | No openjdk 8, with openjdk 11 jenkins returns an error. |
 
 
 ## [Testing](#testing)
