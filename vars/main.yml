@@ -6,6 +6,8 @@ _jenkins_requirements:
   RedHat:
     - initscripts
     - chkconfig
+  Suse:
+    - insserv-compat
 
 jenkins_requirements: "{{ _jenkins_requirements[ansible_os_family] | default(_jenkins_requirements['default']) }}"
 
