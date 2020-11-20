@@ -3,7 +3,9 @@
 
 _jenkins_requirements:
   default: []
-  RedHat: initscripts
+  RedHat:
+    - initscripts
+    - chkconfig
 
 jenkins_requirements: "{{ _jenkins_requirements[ansible_os_family] | default(_jenkins_requirements['default']) }}"
 
