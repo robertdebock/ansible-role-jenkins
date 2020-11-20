@@ -2,7 +2,7 @@
 # vars file for jenkins
 
 _jenkins_requirements:
-  default: ""
+  default: []
   RedHat: initscripts
 
 jenkins_requirements: "{{ _jenkins_requirements[ansible_os_family] | default(_jenkins_requirements['default']) }}"
