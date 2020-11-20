@@ -10,6 +10,15 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
+        - buster
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: OpenSUSE
+      versions:
         - all
     - name: Ubuntu
       versions:

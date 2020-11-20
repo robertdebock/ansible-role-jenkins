@@ -1,6 +1,12 @@
 ---
 # vars file for jenkins
 
+_jenkins_requirements:
+  default: ""
+  RedHat: initscripts
+
+jenkins_requirements: "{{ _jenkins_requirements[ansible_os_family] | default(_jenkins_requirements['default']) }}"
+
 _jenkins_configuration_directory:
   default: /etc/default
   Alpine: /etc/conf.d

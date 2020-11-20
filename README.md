@@ -28,14 +28,9 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
   gather_facts: no
   become: yes
 
-
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.java
-      _java_version:
-        default: 8
-        Debian: 11
-      java_version: "{{ _java_version[ansible_distribution] | default(_java_version['default']) }}"
     - role: robertdebock.locale
     - role: robertdebock.core_dependencies
 ```
@@ -83,7 +78,10 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|debian|all|
+|debian|buster|
+|el|all|
+|fedora|all|
+|opensuse|all|
 |ubuntu|all|
 
 The minimum version of Ansible required is 2.9, tests have been done to:

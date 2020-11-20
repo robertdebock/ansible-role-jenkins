@@ -41,6 +41,11 @@
   when:
     - ansible_pkg_mgr == "zypper"
 
+- name: install requirements
+  package:
+    name: "{{ jenkins_requirements }}"
+    state: present
+
 - name: install jenkins
   package:
     name: jenkins
