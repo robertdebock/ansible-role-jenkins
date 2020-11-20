@@ -8,3 +8,5 @@ exceptions:
     reason: "No openjdk 8, with openjdk 11 jenkins returns an error."
   - variation: ubuntu:focal
     reason: "No openjdk 8, with openjdk 11 jenkins returns an error."
+  - variation: opensuse
+    reason: "An initscript is not idempotent."
