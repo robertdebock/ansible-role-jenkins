@@ -28,10 +28,14 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
   gather_facts: no
   become: yes
 
+
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.java
-      java_version: 8
+      _java_version:
+        default: 8
+        Debian: 11
+      java_version: "{{ _java_version[ansible_distribution] | default(_java_version['default']) }}"
     - role: robertdebock.locale
     - role: robertdebock.core_dependencies
 ```
