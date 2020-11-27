@@ -13,4 +13,5 @@
   assert:
     that:
       - jenkins_listen_address is defined
+      - jenkins_listen_address is string
     quiet: yes
