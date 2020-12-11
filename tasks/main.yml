@@ -10,7 +10,7 @@
     url: "{{ jenkins_yum_repository_baseurl }}"
     dest: /etc/yum.repos.d/jenkins.repo
   when:
-    - ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum"
+    - ansible_pkg_mgr in [ "dnf", "yum" ]
 
 - name: import rpm key
   rpm_key:
@@ -20,17 +20,17 @@
   when:
     - ansible_pkg_mgr in [ "dnf", "yum", "zypper" ]
 
-- name: add apt key
-  apt_key:
-    url: "{{ jenkins_apt_key_url }}"
-    state: present
-  when:
-    - ansible_pkg_mgr == "apt"
+- name: configure apt
+  block:
+    - name: add apt key
+      apt_key:
+        url: "{{ jenkins_apt_key_url }}"
+        state: present
 
-- name: add apt repository
-  apt_repository:
-    repo: "{{ jenkins_apt_repository_repo }}"
-    state: present
+    - name: add apt repository
+      apt_repository:
+        repo: "{{ jenkins_apt_repository_repo }}"
+        state: present
   when:
     - ansible_pkg_mgr == "apt"
 
