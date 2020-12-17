@@ -28,8 +28,6 @@ molecule:
         tag: "latest"
       - image: "fedora"
         tag: "rawhide"
-      - image: "ubuntu"
-        tag: "xenial"
 
 galaxy:
   script:
