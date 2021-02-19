@@ -7,14 +7,14 @@
   delegate_to: localhost
 
 - name: add yum repository
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ jenkins_yum_repository_baseurl }}"
     dest: /etc/yum.repos.d/jenkins.repo
   when:
     - ansible_pkg_mgr in [ "dnf", "yum" ]
 
 - name: import rpm key
-  rpm_key:
+  ansible.builtin.rpm_key:
     key: "{{ jenkins_rpm_key }}"
     state: present
     validate_certs: no
@@ -36,7 +36,7 @@
     - ansible_pkg_mgr == "apt"
 
 - name: add zypper repository
-  zypper_repository:
+  community.general.zypper_repository:
     name: jenkins
     repo: "{{ jenkins_zypper_repository_repo }}"
     state: present
@@ -44,17 +44,17 @@
     - ansible_pkg_mgr == "zypper"
 
 - name: install requirements
-  package:
+  ansible.builtin.package:
     name: "{{ jenkins_requirements }}"
     state: present
 
 - name: install jenkins
-  package:
+  ansible.builtin.package:
     name: jenkins
     state: present
 
 - name: configure jenkins
-  template:
+  ansible.builtin.template:
     src: jenkins.j2
     dest: "{{ jenkins_configuration_directory }}"
     mode: "0640"
@@ -62,7 +62,7 @@
     - restart jenkins
 
 - name: start and enable jenkins
-  service:
+  ansible.builtin.service:
     name: jenkins
     state: started
     enabled: yes
