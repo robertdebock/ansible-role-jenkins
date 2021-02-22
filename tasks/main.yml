@@ -24,12 +24,12 @@
 - name: configure apt
   block:
     - name: add apt key
-      apt_key:
+      ansible.builtin.apt_key:
         url: "{{ jenkins_apt_key_url }}"
         state: present
 
     - name: add apt repository
-      apt_repository:
+      ansible.builtin.apt_repository:
         repo: "{{ jenkins_apt_repository_repo }}"
         state: present
   when:
