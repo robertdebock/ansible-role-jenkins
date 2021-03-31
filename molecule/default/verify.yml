@@ -6,9 +6,9 @@
 
   tasks:
     - name: check if connection still works
-      ping:
+      ansible.builtin.ping:
     - name: check web ui
-      uri:
+      ansible.builtin.uri:
         url: "http://localhost:8080/login"
         return_content: yes
       register: jenkins_check_web_ui
