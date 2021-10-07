@@ -18,7 +18,9 @@ molecule:
     matrix:
       - image: "debian"
         tag: "latest"
-      - image: "rockylinux"
+      - image: "enterpriselinux"
+        tag: "7"
+      - image: "enterpriselinux"
         tag: "latest"
       - image: "fedora"
         tag: "33"
