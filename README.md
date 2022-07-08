@@ -32,6 +32,7 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
     - role: robertdebock.java
+      java_default_version: 11
     - role: robertdebock.locale
     - role: robertdebock.core_dependencies
 ```
