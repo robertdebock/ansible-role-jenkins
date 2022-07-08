@@ -11,6 +11,7 @@
     url: "{{ jenkins_yum_repository_baseurl }}"
     dest: /etc/yum.repos.d/jenkins.repo
     validate_certs: no
+    mode: "0644"
   when:
     - ansible_pkg_mgr in [ "dnf", "yum" ]
 
@@ -62,8 +63,24 @@
   notify:
     - restart jenkins
 
-- name: start and enable jenkins
-  ansible.builtin.service:
-    name: jenkins
-    state: started
-    enabled: yes
+- name: manage jenkins service
+  block:
+    - name: start and enable jenkins
+      ansible.builtin.service:
+        name: jenkins
+        state: started
+        enabled: yes
+  rescue:
+    - name: collect journalctl output
+      ansible.builtin.command:
+        cmd: journalctl -u jenkins
+      changed_when: no
+      register: journalctl
+
+    - name: show journalctl output
+      ansible.builtin.debug:
+        msg: "{{ journalctl }}"
+
+    - name: fail
+      ansible.builtin.fail:
+        msg: "The service jenkins could not be started."
