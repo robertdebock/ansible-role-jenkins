@@ -50,10 +50,19 @@
     name: "{{ jenkins_requirements }}"
     state: present
 
+- name: install jenkins (specific version)
+  ansible.builtin.package:
+    name: "{{ jenkins_package }}"
+    state: present
+  when:
+    - jenkins_version is defined
+
 - name: install jenkins
   ansible.builtin.package:
     name: jenkins
     state: present
+  when:
+    - jenkins_version is not defined
 
 - name: configure jenkins
   ansible.builtin.template:
@@ -64,23 +73,7 @@
     - restart jenkins
 
 - name: manage jenkins service
-  block:
-    - name: start and enable jenkins
-      ansible.builtin.service:
-        name: jenkins
-        state: started
-        enabled: yes
-  rescue:
-    - name: collect journalctl output
-      ansible.builtin.command:
-        cmd: journalctl -u jenkins
-      changed_when: no
-      register: journalctl
-
-    - name: show journalctl output
-      ansible.builtin.debug:
-        msg: "{{ journalctl }}"
-
-    - name: fail
-      ansible.builtin.fail:
-        msg: "The service jenkins could not be started."
+  ansible.builtin.service:
+    name: jenkins
+    state: started
+    enabled: yes
