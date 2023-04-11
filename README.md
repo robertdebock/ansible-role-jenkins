@@ -56,7 +56,7 @@ jenkins_port: 8080
 jenkins_listen_address: "0.0.0.0"
 
 # The version of Jenkins to install. Not specifying a version, will install the latest available.
-# jenkins_version: "2.346.2"
+# jenkins_version: "2.399.1"
 ```
 
 ## [Requirements](#requirements)
