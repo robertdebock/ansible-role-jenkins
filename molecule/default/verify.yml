@@ -5,10 +5,10 @@
   gather_facts: no
 
   tasks:
-    - name: check if connection still works
+    - name: Check if connection still works
       ansible.builtin.ping:
 
-    - name: check web ui
+    - name: Check web ui
       ansible.builtin.uri:
         url: "http://localhost:8080/login"
         return_content: yes
