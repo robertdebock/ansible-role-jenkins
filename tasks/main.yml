@@ -69,8 +69,8 @@
   ansible.builtin.template:
     src: jenkins.j2
     dest: "{{ jenkins_configuration_directory }}/jenkins"
-    force: true
-    backup: true
+    force: yes
+    backup: yes
     mode: "0644"
   notify:
     - Restart jenkins
