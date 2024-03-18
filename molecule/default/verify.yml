@@ -1,8 +1,8 @@
 ---
 - name: Verify
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   tasks:
     - name: Check if connection still works
@@ -11,7 +11,7 @@
     - name: Check web ui
       ansible.builtin.uri:
         url: "http://localhost:8080/login"
-        return_content: yes
+        return_content: true
       register: jenkins_check_web_ui
       failed_when:
         - "'Jenkins' not in jenkins_check_web_ui.content"
