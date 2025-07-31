@@ -1,0 +1,17 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "jenkins" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.epel" [fillcolor=green style=filled]
+    "robertdebock.java" [fillcolor=green style=filled]
+    "robertdebock.locale" [fillcolor=green style=filled]
+    "robertdebock.core_dependencies" [fillcolor=green style=filled]
+  }
+  "jenkins" -> "robertdebock.bootstrap"
+  "jenkins" -> "robertdebock.epel"
+  "jenkins" -> "robertdebock.java"
+  "jenkins" -> "robertdebock.locale"
+  "jenkins" -> "robertdebock.core_dependencies"
+}
