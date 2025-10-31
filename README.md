@@ -34,7 +34,6 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
     - role: robertdebock.java
-      java_default_version: 11
     - role: robertdebock.locale
     - role: robertdebock.core_dependencies
 ```
@@ -88,7 +87,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|[Amazon](https://hub.docker.com/r/robertdebock/amazonlinux)|all|
 |[Debian](https://hub.docker.com/r/robertdebock/debian)|trixie, bookworm|
 |[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
 |[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|9|

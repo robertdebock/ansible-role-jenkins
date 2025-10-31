@@ -29,12 +29,10 @@ jobs:
       fail-fast: false
       matrix:
         distro:
-          - image: "amazonlinux"
-            tag: "latest"
           - image: "debian"
             tag: "latest"
           - image: "debian"
-            tag: "latest"
+            tag: "bookworm"
           - image: "fedora"
             tag: "latest"
           - image: "enterpriselinux"
