@@ -29,9 +29,10 @@
     - ansible_facts['pkg_mgr'] == "apt"
   block:
     - name: Add apt key
-      ansible.builtin.apt_key:
+      ansible.builtin.get_url:
         url: "{{ jenkins_apt_key_url }}"
-        state: present
+        dest: /etc/apt/trusted.gpg.d/jenkins.asc
+        mode: "0644"
 
     - name: Add apt repository
       ansible.builtin.apt_repository:
