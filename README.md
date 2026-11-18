@@ -34,6 +34,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
     - role: robertdebock.java
+      # Jenkins needs Java 21 or 25, Fedora only has 25.
+      java_version: "{{ 25 if ansible_facts['distribution'] == 'Fedora' else 21 }}"
     - role: robertdebock.locale
     - role: robertdebock.core_dependencies
 ```
@@ -87,7 +89,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|[Debian](https://hub.docker.com/r/robertdebock/debian)|trixie, bookworm|
+|[Debian](https://hub.docker.com/r/robertdebock/debian)|trixie|
 |[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
 |[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|9|
 |[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|

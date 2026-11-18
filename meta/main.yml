@@ -10,8 +10,8 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
+        # current Jenkins needs Java 21, Debian 12 only packages 17
         - trixie
-        - bookworm
     - name: Fedora
       versions:
         - all

@@ -36,8 +36,6 @@ jobs:
         distro:
           - image: "debian"
             tag: "latest"
-          - image: "debian"
-            tag: "bookworm"
           - image: "fedora"
             tag: "latest"
           - image: "enterpriselinux"
